@@ -106,7 +106,8 @@ export default function Login() {
       }
 
       const target = new URL(redirectUrl);
-      target.pathname = '/auth/callback';
+      const basePath = target.pathname.replace(/\/+$/, '');
+      target.pathname = `${basePath}/auth/callback`;
       target.hash = new URLSearchParams({
         access_token: token,
         refresh_token: data.session?.refresh_token || '',
