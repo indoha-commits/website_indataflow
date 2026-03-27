@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/ui/page-header";
@@ -11,7 +10,6 @@ import {
   Rocket,
   ArrowRight,
   CheckCircle,
-  Play
 } from "lucide-react";
 
 const steps = [
@@ -114,33 +112,6 @@ export default function HowItWorks() {
               </ScrollAnimation>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Video Section */}
-      <section className="section-padding bg-background">
-        <div className="container-wide">
-          <ScrollAnimation animation="fade-up">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl font-bold mb-4 text-foreground">
-                See InDataFlow in action
-              </h2>
-              <p className="text-muted-foreground mb-8">
-                Watch a quick walkthrough of how logistics teams use InDataFlow every day.
-              </p>
-              
-              <div 
-                className="aspect-video bg-primary/5 rounded-xl border border-border home-card overflow-hidden relative cursor-pointer group hover:shadow-xl transition-shadow duration-300"
-                onClick={() => setIsModalOpen(true)}
-              >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-strong" style={{ background: 'var(--gradient-accent)' }}>
-                    <Play className="w-8 h-8 text-accent-foreground ml-1" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </ScrollAnimation>
         </div>
       </section>
 
