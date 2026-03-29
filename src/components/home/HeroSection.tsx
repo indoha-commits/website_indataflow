@@ -1,30 +1,8 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { AnimatedHeaderBackground } from "@/components/ui/animated-header-background";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-
-const heroImages = [
-  "/header4.png",
-  "/HEADER2.jpeg",
-  "/header.png",
-  "/HEADER3.jpeg",
-];
 
 export function HeroSection() {
-  const [api, setApi] = useState<any>(null);
-
-  useEffect(() => {
-    if (!api) return;
-    const interval = setInterval(() => {
-      api.scrollNext();
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [api]);
   return (
     <section className="section-padding pb-8 relative overflow-hidden bg-background home-theme hero-glow grid-bg">
       <AnimatedHeaderBackground />
@@ -62,37 +40,6 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Header Image Carousel */}
-        <div className="relative max-w-7xl mx-auto animate-fade-up animation-delay-300">
-          <div
-            className="relative overflow-hidden"
-            style={{
-              border: '1px solid rgba(37, 99, 235, 0.35)',
-              borderRadius: '12px',
-              boxShadow:
-                '0 0 0 1px rgba(255,255,255,0.05), 0 0 60px rgba(37, 99, 235, 0.15), 0 24px 64px rgba(0,0,0,0.6)',
-            }}
-          >
-            <Carousel
-              className="w-full"
-              opts={{ loop: true }}
-              setApi={setApi}
-            >
-              <CarouselContent>
-                {heroImages.map((src, index) => (
-                  <CarouselItem key={src}>
-                    <img
-                      src={src}
-                      alt={`InDataFlow operations preview ${index + 1}`}
-                      className="w-full h-auto object-contain"
-                    />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
-          </div>
-        </div>
       </div>
     </section>
   );
