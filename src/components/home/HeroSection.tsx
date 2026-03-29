@@ -40,6 +40,25 @@ export function HeroSection() {
           </div>
         </div>
 
+        {/* Hero Image */}
+        <div className="relative max-w-7xl mx-auto animate-fade-up animation-delay-300">
+          <div
+            className="relative overflow-hidden"
+            style={{
+              border: '1px solid rgba(37, 99, 235, 0.35)',
+              borderRadius: '12px',
+              boxShadow:
+                '0 0 0 1px rgba(255,255,255,0.05), 0 0 60px rgba(37, 99, 235, 0.15), 0 24px 64px rgba(0,0,0,0.6)',
+            }}
+          >
+            <img
+              src="/header4.png"
+              alt="InDataFlow operations preview"
+              className="w-full h-auto object-contain"
+            />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
+          </div>
+        </div>
       </div>
     </section>
   );
